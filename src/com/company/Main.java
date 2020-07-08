@@ -40,11 +40,19 @@ public class Main {
         System.out.println("Would you like to play Again? true/false");
 
         //Ask user to play again
-        boolean playAgain = input.nextBoolean();
-        if (playAgain == true){
+        try {
+            boolean playAgain = input.nextBoolean();
+            if (playAgain == true){
+                askUserToGuess();
+                playGame();
+            }
+        }
+        catch(Exception e){
+            System.out.println("Loser, you didn't type true or false, I will make you play again..");
             askUserToGuess();
             playGame();
         }
+
 
     }
     public static void checkUserGuessNumber(Scanner input, int numberToGuess){
